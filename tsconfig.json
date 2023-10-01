@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "jsx": "react",
+    "noEmit": true,
+    "moduleResolution": "node",
+    "baseUrl": "src/",
+    "paths": {
+      "@resources/*": ["resources/*"],
+      "@services/*": ["services/*"],
+      "@ui/*": ["ui/*"],
+      "@utils/*": ["utils/*"],
+      "@navigation/*": ["ui/navigation/*"],
+      "@components/*": ["ui/components/*"],
+      "@views/*": ["ui/views/*"],
+      "@i18n/*": ["resources/i18n/*"],
+      "@theme/*": ["resources/assets/theme/*"],
+      "@assets/*": ["resources/assets/*"],
+      "@constants/*": ["constants/*"],
+      "@interfaces/*": ["interfaces/*"],
+    },
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": [
+    "node_modules",
+  ],
+}
