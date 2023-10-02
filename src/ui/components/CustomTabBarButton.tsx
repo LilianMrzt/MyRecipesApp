@@ -63,7 +63,7 @@ const customTabBarButtonStyle = colors =>
       width: 60,
       height: 60,
       borderRadius: 50,
-      backgroundColor: colors.secondary,
+      backgroundColor: colors.primary,
       justifyContent: 'center',
       alignItems: 'center',
     },

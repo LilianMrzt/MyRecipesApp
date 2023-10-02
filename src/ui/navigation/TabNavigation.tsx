@@ -27,7 +27,7 @@ const TabNavigation = () => {
       initialRouteName={RouteConstants.HOME_SCREEN}
       screenOptions={{
         tabBarActiveTintColor: colors.primary,
-        tabBarInactiveTintColor: colors.secondary,
+        tabBarInactiveTintColor: colors.tertiary,
         headerStyle: styles.header,
         headerTintColor: colors.onBackground,
         tabBarShowLabel: false,
