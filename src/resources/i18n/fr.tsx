@@ -1,4 +1,7 @@
 export default {
   HomeScreen: 'Accueil',
-  SecondScreen: 'Deuxième écran',
+  MyRecipesScreen: 'Mes recettes',
+  CreateRecipeScreen: 'Créer une recette',
+  ProfileScreen: 'Mon profil',
+  SearchScreen: 'Chercher une recette',
 };

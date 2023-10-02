@@ -1,20 +1,20 @@
-import I18n from '@utils/I18n';
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import I18n from '@utils/I18n';
 import {useTheme} from '@react-navigation/native';
 
-const SecondScreen = () => {
+const ProfileScreen = () => {
   const {colors} = useTheme();
-  const styles = homeScreenStyle(colors);
+  const styles = profileScreenStyle(colors);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.welcome_text}>{I18n.t('SecondScreen')}</Text>
+      <Text style={styles.welcome_text}>{I18n.t('ProfileScreen')}</Text>
     </View>
   );
 };
 
-const homeScreenStyle = (colors: any) =>
+const profileScreenStyle = (colors: any) =>
   StyleSheet.create({
     container: {
       flex: 1,
@@ -28,4 +28,4 @@ const homeScreenStyle = (colors: any) =>
     },
   });
 
-export default SecondScreen;
+export default ProfileScreen;
