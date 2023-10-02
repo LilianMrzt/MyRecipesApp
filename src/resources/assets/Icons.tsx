@@ -6,6 +6,7 @@ const person = 'person';
 const add = 'add';
 const close = 'close';
 const edit = 'create-outline';
+const trash = 'trash-outline';
 
 export default {
     home,
@@ -14,5 +15,6 @@ export default {
     person,
     add,
     close,
-    edit
+    edit,
+    trash
 };

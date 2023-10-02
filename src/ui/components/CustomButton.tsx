@@ -1,20 +1,19 @@
 import { IconButtonProps } from '@interfaces/ComponentsInterfaces';
 import { useTheme } from '@react-navigation/native';
 import React, { FC } from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-const IconButton: FC<IconButtonProps> = ({
+const CustomButton: FC<IconButtonProps> = ({
     icon,
     onPress,
     style,
     backgroundColor,
     elevation = 1,
     padding = 0,
-    size
+    label,
+    textColor
 }) => {
     const { colors } = useTheme();
-    const iconSize = icon.props.size;
-    const buttonSize = size ? size : iconSize + 10;
     const styles = iconButtonStyle();
 
     return (
@@ -23,8 +22,6 @@ const IconButton: FC<IconButtonProps> = ({
                 styles.button,
                 style,
                 {
-                    height: buttonSize,
-                    width: buttonSize,
                     backgroundColor: backgroundColor ?? colors.background,
                     elevation: elevation,
                     padding: padding
@@ -32,7 +29,12 @@ const IconButton: FC<IconButtonProps> = ({
             ]}
             onPress={onPress}
         >
-            {icon}
+            <View style={styles.container}>
+                {icon}
+                {label && (
+                    <Text style={[{ color: textColor }, icon && { marginLeft: 10 }]}>{label}</Text>
+                )}
+            </View>
         </TouchableOpacity>
     );
 };
@@ -43,7 +45,11 @@ const iconButtonStyle = () =>
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: 50
+        },
+        container: {
+            display: 'flex',
+            flexDirection: 'row'
         }
     });
 
-export default IconButton;
+export default CustomButton;

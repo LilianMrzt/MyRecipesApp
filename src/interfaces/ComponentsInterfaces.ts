@@ -5,10 +5,11 @@ export interface IconButtonProps {
     icon: ReactElement<any, any>;
     onPress: () => void;
     style?: ViewStyle;
-    size?: number;
     backgroundColor?: string;
     elevation?: number;
     padding?: number;
+    label?: string;
+    textColor?: string;
 }
 
 export interface EditableTextProps {

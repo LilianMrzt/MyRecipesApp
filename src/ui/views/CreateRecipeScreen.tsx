@@ -1,6 +1,7 @@
 import Icons from '@assets/Icons';
+import CustomButton from '@components/CustomButton';
 import EditableText from '@components/EditableText';
-import IconButton from '@components/IconButton';
+import RecipeStepsCreation from '@components/recipeCreation/RecipeStepsCreation';
 import { useTheme } from '@react-navigation/native';
 import Images from '@resources/images/Images';
 import I18n from '@utils/I18n';
@@ -14,7 +15,7 @@ const CreateRecipeScreen = ({ closeModal }) => {
 
     return (
         <View style={{ flex: 1 }}>
-            <IconButton
+            <CustomButton
                 icon={
                     <Ionicons
                         name={Icons.close}
@@ -36,6 +37,7 @@ const CreateRecipeScreen = ({ closeModal }) => {
                         placeholder={I18n.t('NewRecipe')}
                         fontSize={24}
                     />
+                    <RecipeStepsCreation />
                 </View>
             </ScrollView>
         </View>
