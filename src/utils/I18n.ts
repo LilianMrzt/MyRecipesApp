@@ -5,12 +5,12 @@ import * as RNLocalize from 'react-native-localize';
 const locales = RNLocalize.getLocales();
 
 if (Array.isArray(locales)) {
-  I18n.locale = 'fr';
+    I18n.locale = 'fr';
 }
 
 I18n.fallbacks = true;
 I18n.translations = {
-  fr,
+    fr
 };
 
 export default I18n;
