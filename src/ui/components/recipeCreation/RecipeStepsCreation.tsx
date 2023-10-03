@@ -1,6 +1,7 @@
 import Icons from '@assets/Icons';
 import CustomButton from '@components/CustomButton';
 import EditableStep from '@components/recipeCreation/EditableStep';
+import { Step } from '@interfaces/ObjectsInterfaces';
 import { useTheme } from '@react-navigation/native';
 import I18n from 'i18n-js';
 import React, { useState } from 'react';
@@ -11,7 +12,7 @@ const RecipeStepsCreation = () => {
     const { colors } = useTheme();
     const styles = recipeStepsCreationStyle(colors);
 
-    const [steps, setSteps] = useState([
+    const [steps, setSteps] = useState<Step[]>([
         {
             name: `${I18n.t('Step')} ${1}`,
             content: ''
@@ -34,7 +35,7 @@ const RecipeStepsCreation = () => {
      * @param index
      * @param content
      */
-    const updateStepContent = (index: number, content) => {
+    const updateStepContent = (index: number, content: string) => {
         const updatedSteps = [...steps];
         updatedSteps[index].content = content;
         setSteps(updatedSteps);
@@ -44,7 +45,7 @@ const RecipeStepsCreation = () => {
      * Supprimer l'étape de la liste
      * @param index
      */
-    const deleteStep = (index) => {
+    const deleteStep = (index: number) => {
         const updatedSteps = [...steps];
         updatedSteps.splice(index, 1);
 
@@ -66,6 +67,7 @@ const RecipeStepsCreation = () => {
                     index={index}
                     updateStepContent={updateStepContent}
                     deleteStep={() => deleteStep(index)}
+                    numberOfSteps={steps.length}
                 />
             ))}
 

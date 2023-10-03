@@ -1,11 +1,18 @@
 import Icons from '@assets/Icons';
 import CustomButton from '@components/CustomButton';
+import { EditableStepProps } from '@interfaces/ComponentsInterfaces';
 import { useTheme } from '@react-navigation/native';
-import React from 'react';
+import React, { FC } from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const EditableStep = ({ step, index, updateStepContent, deleteStep }) => {
+const EditableStep: FC<EditableStepProps> = ({
+    step,
+    index,
+    updateStepContent,
+    deleteStep,
+    numberOfSteps
+}) => {
     const { colors } = useTheme();
     const styles = editableStepStyle(colors);
 
@@ -21,18 +28,20 @@ const EditableStep = ({ step, index, updateStepContent, deleteStep }) => {
         <View style={styles.container}>
             <View style={styles.informationsView}>
                 <Text style={styles.stepText}>{step.name}</Text>
-                <CustomButton
-                    icon={
-                        <Ionicons
-                            name={Icons.trash}
-                            color={colors.onTertiary}
-                            size={20}
-                        />
-                    }
-                    onPress={deleteStep}
-                    backgroundColor={colors.surface}
-                    elevation={0}
-                />
+                {numberOfSteps > 1 && (
+                    <CustomButton
+                        icon={
+                            <Ionicons
+                                name={Icons.trash}
+                                color={colors.onTertiary}
+                                size={20}
+                            />
+                        }
+                        onPress={deleteStep}
+                        backgroundColor={colors.surface}
+                        elevation={0}
+                    />
+                )}
             </View>
 
             <TextInput

@@ -1,3 +1,4 @@
+import { Step } from '@interfaces/ObjectsInterfaces';
 import { ReactElement } from 'react';
 import { ViewStyle } from 'react-native';
 
@@ -28,4 +29,12 @@ export interface EditableTextProps {
         | '800'
         | '900';
     style?: ViewStyle;
+}
+
+export interface EditableStepProps {
+    step: Step;
+    index: number;
+    updateStepContent: (index: number, text: string) => void;
+    deleteStep: () => void;
+    numberOfSteps: number;
 }
