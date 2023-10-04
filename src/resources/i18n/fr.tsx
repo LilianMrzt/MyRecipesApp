@@ -8,5 +8,10 @@ export default {
     NewRecipe: 'Nouvelle recette',
     Steps: 'Etapes',
     Step: 'Etape',
-    AddStep: 'Ajouter une étape'
+    AddStep: 'Ajouter une étape',
+    Cancel: 'Annuler',
+    Confirm: 'Confirmer',
+    Warning: 'Attention',
+    CloseRecipeCreationWarning:
+        "Fermer l'écran de création de recette réinitialisera toutes vos modifications."
 };

@@ -30,7 +30,7 @@ const CustomButton: FC<IconButtonProps> = ({
             onPress={onPress}
         >
             <View style={styles.container}>
-                {icon}
+                {icon && <>{icon}</>}
                 {label && (
                     <Text style={[{ color: textColor }, icon && { marginLeft: 10 }]}>{label}</Text>
                 )}

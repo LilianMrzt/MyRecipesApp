@@ -65,7 +65,7 @@ const TabNavigation = () => {
                 }}
             />
             <Tab.Screen
-                name={RouteConstants.CREATE_RECIPE_SCREEN_STACK}
+                name={'RouteConstants.CREATE_RECIPE_SCREEN_STACK'}
                 component={Placeholder}
                 options={{
                     title: I18n.t('CreateRecipeScreen'),
@@ -83,7 +83,7 @@ const TabNavigation = () => {
                 listeners={({ navigation }) => ({
                     tabPress: (e) => {
                         e.preventDefault();
-                        navigation.navigate(RouteConstants.CREATE_RECIPE_SCREEN);
+                        navigation.navigate(RouteConstants.CREATE_RECIPE_SCREEN_STACK);
                     }
                 })}
             />

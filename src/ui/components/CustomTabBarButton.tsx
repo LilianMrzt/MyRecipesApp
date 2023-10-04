@@ -1,7 +1,7 @@
+import { CustomTabBarButtonPros } from '@interfaces/ComponentsInterfaces';
 import { useTheme } from '@react-navigation/native';
-import React, { FC } from "react";
+import React, { FC } from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
-import { CustomTabBarButtonPros } from "@interfaces/ComponentsInterfaces";
 
 const CustomTabBarButton: FC<CustomTabBarButtonPros> = ({ children, onPress }) => {
     const { colors } = useTheme();

@@ -1,7 +1,7 @@
 import RouteConstants from '@constants/RouteConstants';
+import CreateRecipeStackNavigation from '@navigation/CreateRecipeStackNavigation';
 import TabNavigation from '@navigation/TabNavigation';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
-import CreateRecipeScreen from '@views/CreateRecipeScreen';
 import React from 'react';
 
 const Stack = createStackNavigator();
@@ -20,9 +20,9 @@ const RootStackNavigator = () => {
             />
             <Stack.Group>
                 <Stack.Screen
-                    name={RouteConstants.CREATE_RECIPE_SCREEN}
-                    component={CreateRecipeScreen}
-                    options={{ ...TransitionPresets.ModalPresentationIOS }}
+                    name={RouteConstants.CREATE_RECIPE_SCREEN_STACK}
+                    component={CreateRecipeStackNavigation}
+                    options={{ ...TransitionPresets.RevealFromBottomAndroid }}
                 />
             </Stack.Group>
         </Stack.Navigator>

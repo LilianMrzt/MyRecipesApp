@@ -2,11 +2,12 @@ import Icons from '@assets/Icons';
 import CustomButton from '@components/CustomButton';
 import EditableText from '@components/EditableText';
 import RecipeStepsCreation from '@components/recipeCreation/RecipeStepsCreation';
+import RouteConstants from '@constants/RouteConstants';
 import { useTheme } from '@react-navigation/native';
 import Images from '@resources/images/Images';
 import I18n from '@utils/I18n';
 import React from 'react';
-import { Image, ScrollView, StyleSheet, View } from 'react-native';
+import { Image, ScrollView, StatusBar, StyleSheet, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const CreateRecipeScreen = ({ navigation }) => {
@@ -24,7 +25,7 @@ const CreateRecipeScreen = ({ navigation }) => {
                     />
                 }
                 style={styles.closeButton}
-                onPress={() => navigation.goBack()}
+                onPress={() => navigation.navigate(RouteConstants.CLOSE_RECIPE_MODAL)}
                 backgroundColor={colors.tertiary}
             />
             <ScrollView contentContainerStyle={styles.contentContainer}>
@@ -49,6 +50,7 @@ const createRecipeScreenStyle = (colors: any) =>
         container: {
             flex: 1,
             backgroundColor: colors.background,
+            marginTop: StatusBar.currentHeight
         },
         contentContainer: {
             justifyContent: 'flex-start',

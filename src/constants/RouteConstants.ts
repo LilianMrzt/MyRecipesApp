@@ -6,5 +6,8 @@ export default {
     MY_RECIPES_SCREEN: 'MyRecipesScreen',
     CREATE_RECIPE_SCREEN: 'CreateRecipeScreen',
     PROFILE_SCREEN: 'ProfileScreen',
-    SEARCH_SCREEN: 'SearchScreen'
+    SEARCH_SCREEN: 'SearchScreen',
+
+    ADD_INGREDIENT_MODAL: 'AddIngredientModal',
+    CLOSE_RECIPE_MODAL: 'CloseRecipeModal'
 };

@@ -1,9 +1,9 @@
 import { Step } from '@interfaces/ObjectsInterfaces';
-import { ReactElement, ReactNode } from "react";
-import { GestureResponderEvent, ViewStyle } from "react-native";
+import { ReactElement, ReactNode } from 'react';
+import { GestureResponderEvent, ViewStyle } from 'react-native';
 
 export interface IconButtonProps {
-    icon: ReactElement<any, any>;
+    icon?: ReactElement<any, any>;
     onPress: () => void;
     style?: ViewStyle;
     backgroundColor?: string;

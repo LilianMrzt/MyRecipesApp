@@ -7,6 +7,7 @@ const add = 'add';
 const close = 'close';
 const edit = 'create-outline';
 const trash = 'trash-outline';
+const warning = 'warning-outline';
 
 export default {
     home,
@@ -16,5 +17,6 @@ export default {
     add,
     close,
     edit,
-    trash
+    trash,
+    warning
 };
