@@ -9,12 +9,12 @@ import React from 'react';
 import { Image, ScrollView, StyleSheet, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const CreateRecipeScreen = ({ closeModal }) => {
+const CreateRecipeScreen = ({ navigation }) => {
     const { colors } = useTheme();
     const styles = createRecipeScreenStyle(colors);
 
     return (
-        <View style={{ flex: 1 }}>
+        <View style={styles.container}>
             <CustomButton
                 icon={
                     <Ionicons
@@ -24,10 +24,10 @@ const CreateRecipeScreen = ({ closeModal }) => {
                     />
                 }
                 style={styles.closeButton}
-                onPress={closeModal}
+                onPress={() => navigation.goBack()}
                 backgroundColor={colors.tertiary}
             />
-            <ScrollView contentContainerStyle={styles.container}>
+            <ScrollView contentContainerStyle={styles.contentContainer}>
                 <Image
                     source={Images.hotPot}
                     style={styles.image}
@@ -47,6 +47,10 @@ const CreateRecipeScreen = ({ closeModal }) => {
 const createRecipeScreenStyle = (colors: any) =>
     StyleSheet.create({
         container: {
+            flex: 1,
+            backgroundColor: colors.background,
+        },
+        contentContainer: {
             justifyContent: 'flex-start',
             alignItems: 'center',
             backgroundColor: colors.background,

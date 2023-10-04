@@ -3,8 +3,8 @@ import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import DarkTheme from '@theme/DarkTheme';
 import LightTheme from '@theme/LightTheme';
-import TabNavigation from '@navigation/TabNavigation';
 import changeNavigationBarColor from 'react-native-navigation-bar-color';
+import RootStackNavigator from "@navigation/RootStackNavigator";
 
 const App = () => {
   const scheme = useColorScheme();
@@ -26,7 +26,7 @@ const App = () => {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
       />
       <NavigationContainer theme={scheme === 'dark' ? DarkTheme : LightTheme}>
-        <TabNavigation />
+        <RootStackNavigator />
       </NavigationContainer>
     </SafeAreaView>
   );

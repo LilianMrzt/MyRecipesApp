@@ -14,7 +14,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
 
-const CreateRecipeComponent = () => {
+const Placeholder = () => {
     return null;
 };
 
@@ -65,21 +65,27 @@ const TabNavigation = () => {
                 }}
             />
             <Tab.Screen
-                name={RouteConstants.CREATE_RECIPE_SCREEN}
-                component={CreateRecipeComponent}
+                name={RouteConstants.CREATE_RECIPE_SCREEN_STACK}
+                component={Placeholder}
                 options={{
                     title: I18n.t('CreateRecipeScreen'),
                     // eslint-disable-next-line react/no-unstable-nested-components
-                    tabBarIcon: ({ color, size }) => (
+                    tabBarIcon: ({ size }) => (
                         <Ionicons
-                            name={Icons.food}
-                            color={color}
+                            name={Icons.add}
+                            color={colors.surface}
                             size={size}
                         />
                     ),
                     // eslint-disable-next-line react/no-unstable-nested-components
-                    tabBarButton: () => <CustomTabBarButton />
+                    tabBarButton: (props) => <CustomTabBarButton {...props} />
                 }}
+                listeners={({ navigation }) => ({
+                    tabPress: (e) => {
+                        e.preventDefault();
+                        navigation.navigate(RouteConstants.CREATE_RECIPE_SCREEN);
+                    }
+                })}
             />
             <Tab.Screen
                 name={RouteConstants.MY_RECIPES_SCREEN}

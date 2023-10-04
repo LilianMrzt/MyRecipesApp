@@ -1,40 +1,22 @@
-import Icons from '@assets/Icons';
 import { useTheme } from '@react-navigation/native';
-import CreateRecipeScreen from '@views/CreateRecipeScreen';
-import React, { useState } from 'react';
-import { Modal, StyleSheet, TouchableOpacity, View } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import React, { FC } from "react";
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { CustomTabBarButtonPros } from "@interfaces/ComponentsInterfaces";
 
-const CustomTabBarButton = () => {
+const CustomTabBarButton: FC<CustomTabBarButtonPros> = ({ children, onPress }) => {
     const { colors } = useTheme();
     const styles = customTabBarButtonStyle(colors);
-
-    const [isModalVisible, setIsModalVisible] = useState(false);
 
     return (
         <>
             <View style={styles.container}>
                 <TouchableOpacity
                     style={[styles.customButton]}
-                    onPress={() => setIsModalVisible(true)}
+                    onPress={onPress}
                 >
-                    <View style={styles.buttonContent}>
-                        <Ionicons
-                            name={Icons.add}
-                            color={colors.surface}
-                            size={30}
-                        />
-                    </View>
+                    <View style={styles.buttonContent}>{children}</View>
                 </TouchableOpacity>
             </View>
-            <Modal
-                visible={isModalVisible}
-                animationType={'slide'}
-                onRequestClose={() => setIsModalVisible(false)}
-                style={styles.modal}
-            >
-                <CreateRecipeScreen closeModal={() => setIsModalVisible(false)} />
-            </Modal>
         </>
     );
 };
@@ -62,10 +44,6 @@ const customTabBarButtonStyle = (colors) =>
             backgroundColor: colors.primary,
             justifyContent: 'center',
             alignItems: 'center'
-        },
-        modal: {
-            justifyContent: 'flex-end',
-            margin: 0
         }
     });
 

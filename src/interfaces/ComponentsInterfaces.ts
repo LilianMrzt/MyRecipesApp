@@ -1,6 +1,6 @@
 import { Step } from '@interfaces/ObjectsInterfaces';
-import { ReactElement } from 'react';
-import { ViewStyle } from 'react-native';
+import { ReactElement, ReactNode } from "react";
+import { GestureResponderEvent, ViewStyle } from "react-native";
 
 export interface IconButtonProps {
     icon: ReactElement<any, any>;
@@ -37,4 +37,9 @@ export interface EditableStepProps {
     updateStepContent: (index: number, text: string) => void;
     deleteStep: () => void;
     numberOfSteps: number;
+}
+
+export interface CustomTabBarButtonPros {
+    children?: ReactNode;
+    onPress?: (e: any | GestureResponderEvent) => void;
 }
