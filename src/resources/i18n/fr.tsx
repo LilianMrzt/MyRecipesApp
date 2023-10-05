@@ -13,5 +13,6 @@ export default {
     Confirm: 'Confirmer',
     Warning: 'Attention',
     CloseRecipeCreationWarning:
-        "Fermer l'écran de création de recette réinitialisera toutes vos modifications."
+        "Fermer l'écran de création de recette réinitialisera toutes vos modifications.",
+    AddIngredient: 'Ajouter un ingrédient'
 };

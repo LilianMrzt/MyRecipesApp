@@ -1,3 +1,4 @@
+import AddIngredientModal from '@components/recipeCreation/AddIngredientModal';
 import CloseRecipeModal from '@components/recipeCreation/CloseRecipeModal';
 import RouteConstants from '@constants/RouteConstants';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -21,6 +22,11 @@ const CreateRecipeStackNavigation = () => {
             <Stack.Screen
                 name={RouteConstants.CLOSE_RECIPE_MODAL}
                 component={CloseRecipeModal}
+                options={{ presentation: 'transparentModal' }}
+            />
+            <Stack.Screen
+                name={RouteConstants.ADD_INGREDIENT_MODAL}
+                component={AddIngredientModal}
                 options={{ presentation: 'transparentModal' }}
             />
         </Stack.Navigator>

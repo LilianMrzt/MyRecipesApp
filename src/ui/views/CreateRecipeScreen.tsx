@@ -1,18 +1,31 @@
 import Icons from '@assets/Icons';
 import CustomButton from '@components/CustomButton';
 import EditableText from '@components/EditableText';
+import AddIngredients from '@components/recipeCreation/AddIngredients';
 import RecipeStepsCreation from '@components/recipeCreation/RecipeStepsCreation';
 import RouteConstants from '@constants/RouteConstants';
 import { useTheme } from '@react-navigation/native';
 import Images from '@resources/images/Images';
 import I18n from '@utils/I18n';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Image, ScrollView, StatusBar, StyleSheet, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const CreateRecipeScreen = ({ navigation }) => {
     const { colors } = useTheme();
     const styles = createRecipeScreenStyle(colors);
+
+    /**
+     * Permet de gérer l'action de retour du téléphone afin d'afficher la popup d'alerte
+     */
+    useEffect(
+        () =>
+            navigation.addListener('beforeRemove', (e) => {
+                e.preventDefault();
+                navigation.navigate(RouteConstants.CLOSE_RECIPE_MODAL);
+            }),
+        [navigation]
+    );
 
     return (
         <View style={styles.container}>
@@ -38,6 +51,7 @@ const CreateRecipeScreen = ({ navigation }) => {
                         placeholder={I18n.t('NewRecipe')}
                         fontSize={24}
                     />
+                    <AddIngredients navigation={navigation} />
                     <RecipeStepsCreation />
                 </View>
             </ScrollView>

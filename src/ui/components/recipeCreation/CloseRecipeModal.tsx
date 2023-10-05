@@ -26,7 +26,7 @@ const CloseRecipeModal = ({ navigation }) => {
                 <Text style={styles.infoText}>{I18n.t('CloseRecipeCreationWarning')}</Text>
                 <View style={styles.buttonsContainer}>
                     <CustomButton
-                        onPress={() => navigation.goBack()}
+                        onPress={() => navigation.navigate(RouteConstants.CREATE_RECIPE_SCREEN)}
                         label={I18n.t('Cancel')}
                         padding={10}
                         backgroundColor={colors.surface}
@@ -66,7 +66,8 @@ const closeRecipeModalStyle = (colors: any) =>
         container: {
             padding: 20,
             backgroundColor: colors.surface,
-            borderRadius: 10
+            borderRadius: 10,
+            elevation: 1
         },
         warningText: {
             color: colors.onSurface,
