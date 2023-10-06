@@ -9,5 +9,6 @@ export default {
     SEARCH_SCREEN: 'SearchScreen',
 
     ADD_INGREDIENT_MODAL: 'AddIngredientModal',
+    ADD_INGREDIENT_MODAL2: 'AddIngredientModal2',
     CLOSE_RECIPE_MODAL: 'CloseRecipeModal'
 };

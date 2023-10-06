@@ -1,7 +1,7 @@
 import AddIngredientModal from '@components/recipeCreation/AddIngredientModal';
 import CloseRecipeModal from '@components/recipeCreation/CloseRecipeModal';
 import RouteConstants from '@constants/RouteConstants';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import CreateRecipeScreen from '@views/CreateRecipeScreen';
 import React from 'react';
 
@@ -27,7 +27,18 @@ const CreateRecipeStackNavigation = () => {
             <Stack.Screen
                 name={RouteConstants.ADD_INGREDIENT_MODAL}
                 component={AddIngredientModal}
-                options={{ presentation: 'transparentModal' }}
+                options={{
+                    presentation: 'transparentModal',
+                    ...TransitionPresets.ModalFadeTransition
+                }}
+            />
+            <Stack.Screen
+                name={RouteConstants.ADD_INGREDIENT_MODAL2}
+                component={AddIngredientModal}
+                options={{
+                    presentation: 'transparentModal',
+                    ...TransitionPresets.ModalFadeTransition
+                }}
             />
         </Stack.Navigator>
     );

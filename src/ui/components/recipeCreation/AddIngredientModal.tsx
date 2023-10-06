@@ -1,20 +1,37 @@
+import BottomSheet from '@components/BottomSheet';
+import { useTheme } from '@react-navigation/native';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Button, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-const AddIngredientModal = ({}) => {
+const AddIngredientModal = ({ navigation }) => {
+    const { colors } = useTheme();
+    const styles = addIngredientModalStyle(colors);
+
     return (
-        <View
-            style={{
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: 20,
-                backgroundColor: '#00000066',
-                flex: 1
-            }}
+        <TouchableOpacity
+            style={styles.container}
+            activeOpacity={1}
+            onPress={() => navigation.goBack()}
         >
-            <Text>Test</Text>
-        </View>
+            <BottomSheet backgroundColor={colors.surface}>
+                <Text>Test</Text>
+                <Button
+                    title={'Test'}
+                    onPress={() => navigation.goBack()}
+                />
+            </BottomSheet>
+        </TouchableOpacity>
     );
 };
+
+const addIngredientModalStyle = (colors: any) =>
+    StyleSheet.create({
+        container: {
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+            backgroundColor: '#00000066',
+            flex: 1
+        }
+    });
 
 export default AddIngredientModal;
